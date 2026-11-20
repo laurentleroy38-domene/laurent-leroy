@@ -73,7 +73,7 @@ h2{font-size:1.7rem;margin:0 0 22px;letter-spacing:-.01em}
 .ctbox a.row{display:block;margin-top:10px;padding:12px 14px;border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);text-decoration:none;font-weight:600;word-break:break-all}
 .ctbox a.row:hover{background:var(--accent);color:#fff}
 .ctx{position:absolute;top:8px;right:12px;background:none;border:0;font-size:26px;line-height:1;color:var(--muted);cursor:pointer}
-.thumb{aspect-ratio:4/3;background:repeating-linear-gradient(92deg,#b07a46 0 7px,#a26d3c 7px 11px,#bb8651 11px 20px);overflow:hidden}
+.thumb{container-type:inline-size;aspect-ratio:4/3;background:repeating-linear-gradient(92deg,#b07a46 0 7px,#a26d3c 7px 11px,#bb8651 11px 20px);overflow:hidden}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .b{padding:15px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card h3{margin:0;font-size:1.05rem;line-height:1.3}
@@ -99,6 +99,9 @@ footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);pad
 .wa{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;align-items:center;gap:8px;background:#1f9d55;color:#fff;font:600 15px/1 system-ui,sans-serif;padding:13px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.28)}.wa:hover{background:#178a48}.wa:focus-visible{outline:3px solid #fff;outline-offset:2px}@media(max-width:480px){.wa{left:16px;right:16px;justify-content:center}}
 footer{padding-bottom:80px}
 .avis .note{font-size:1.15rem;margin:0 0 16px}.avis .stars{color:#e0a020;letter-spacing:2px;font-size:1.3rem}.btn-avis{display:inline-block;border:2px solid var(--accent);color:var(--accent);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600}.btn-avis:hover{background:var(--accent);color:var(--bg)}
+.filters button[data-f="encours"]{background:#e8590c;border-color:#e8590c;color:#fff;font-weight:600}.filters button[data-f="encours"].on{background:#b84308;border-color:#b84308;color:#fff}
+.card{cursor:zoom-in}
+.wm{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-24deg);pointer-events:none;white-space:nowrap;font:800 4.4cqw/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.88);text-shadow:0 1px 3px rgba(0,0,0,.75),0 0 10px rgba(0,0,0,.45);padding:7px 14px;border-top:2px solid rgba(255,255,255,.75);border-bottom:2px solid rgba(255,255,255,.75)}
 </style>
 </head>
 <body>
@@ -146,7 +149,7 @@ footer{padding-bottom:80px}
 </section>
 
 <a class="wa" href="https://wa.me/33667326152?text=Bonjour%20Laurent%2C%20je%20souhaite%20un%20devis%20pour%20un%20projet%20en%20bois%20sur%20mesure.%20Voici%20mon%20projet%20%3A%20" target="_blank" rel="noopener" aria-label="Demander un devis par WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-1.4-.7-2.400-1.300-3.300-2.900-.2-.3.2-.3.700-1.100.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.300-.7.700-1 1.500-1 2.300.1 1 .5 1.900 1.100 2.700 1.200 1.700 2.700 3 4.600 3.700 1.800.6 2.300.5 3.100.4.500-.1 1.500-.6 1.700-1.200.2-.6.2-1.100.1-1.200-.1-.1-.3-.2-.5-.3z"/></svg><span>Devis par WhatsApp</span></a>
-<footer>© 2026 Laurent Leroy · Photos et fiches : L’Air du Bois · Version du 18/11/2026 18h40</footer>
+<footer>© 2026 Laurent Leroy · Photos et fiches : L’Air du Bois · Version du 20/11/2026 17h50</footer>
 
 <div class="lb" id="lb" hidden><button data-a="x" class="x" aria-label="Fermer">✕</button><button data-a="p" class="p" aria-label="Photo précédente">‹</button><img alt=""><button data-a="n" class="n" aria-label="Photo suivante">›</button><div class="cap"><span class="lt"></span></div></div>
 
@@ -156,6 +159,7 @@ var BASE="https://www.lairdubois.fr/media/cache/1024x1024i/";
 var TH="https://www.lairdubois.fr/media/cache/470x275o/";
 var P="https://www.lairdubois.fr/creations/";
 var items=[
+{t:"Rénovation par ponçage de l’ancienne couche de vernis sombre",c:"encours",wm:"En cours de rénovation",w:["En cours","Ponçage","Bois massif"],f:"",d:"Table basse à plateau vitrée en cours de rénovation : l’ancienne couche de vernis sombre sera poncée pour retrouver la couleur initiale du bois.",l:"img/renovation-table-1.jpg",p:"50% 43%",g:["img/renovation-table-1.jpg"],h:"https://www.instagram.com/leroy38laurent/"},
 {t:"Planche à découper en bois de bout",c:"table",w:["Frêne","Zapelli"],f:"",d:"Planche à découper en bois de bout, assemblée en motifs de frêne clair et de zapelli foncé, avec angles arrondis et prises en main creusées sur les côtés.",l:"img/planche-bout-1.jpg",p:"50% 55%",g:["img/planche-bout-1.jpg","img/planche-bout-2.jpg"],h:"https://www.instagram.com/leroy38laurent/"},
 {t:"Verrières triangulaires en bois",c:"escalier",w:["Bois massif","Sur mesure"],f:"",d:"Ouvertures vitrées aux formes triangulaires, encadrées de bois et dessinées pour suivre la pente de l’escalier.",l:"img/verrieres-1.jpg",p:"50% 55%",g:["img/verrieres-1.jpg","img/verrieres-2.jpg"],h:"https://www.instagram.com/leroy38laurent/"},
 {t:"Bureau et rangements sur mesure",c:"rangement",w:["Sur mesure","Bois & blanc"],f:"",d:"Ensemble sur mesure : bureau en bois, étagère, rangements hauts laqués blancs et meuble bas arrondi à deux tiroirs avec poignées en cuir, le tout intégré à l’arche peinte.",l:"img/bureau-1.jpg",p:"50% 50%",g:["img/bureau-1.jpg","img/bureau-2.jpg"],h:"https://www.instagram.com/leroy38laurent/"},
@@ -190,13 +194,13 @@ var items=[
 {t:"Enceinte chêne et MDF",c:"enceinte",y:2018,w:["Chêne","MDF 12 mm"],f:"",d:"Enceinte acoustique en chêne et MDF, une réalisation ancienne.",l:"img/enceinte-chene-1.jpg",p:"50% 40%",i:"2b506e26d46f7fb08e660769bdd89885541a695c.jpg",u:"7949-enceinte-chene-et-mdf.html"}
 ];
 /* ordre = du plus récent au plus ancien (haut de la liste = dernier ajouté) */
-var cats=[["all","Tout"],["vente","À vendre"],["meuble","Meubles"],["lit","Lits"],["rangement","Rangements"],["escalier","Escaliers"],["table","Table & cuisine"],["renovation","Rénovation"],["enceinte","Enceintes"]];
+var cats=[["all","Tout"],["vente","À vendre"],["encours","Travail en cours"],["meuble","Meubles"],["lit","Lits"],["rangement","Rangements"],["escalier","Escaliers"],["table","Table & cuisine"],["renovation","Rénovation"],["enceinte","Enceintes"]];
 var f=document.getElementById("filters"),g=document.getElementById("grid"),n=document.getElementById("count");
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;")}
 cats.forEach(function(c,k){var b=document.createElement("button");b.textContent=c[1];b.setAttribute("data-f",c[0]);if(!k)b.className="on";f.appendChild(b)});
 items.forEach(function(it){
-var a=document.createElement("a");a.className="card";a.href=it.h||P+it.u;a.target="_blank";a.rel="noopener";a.setAttribute("data-cat",it.c);if(it.pr)a.setAttribute("data-sale","1");
-a.innerHTML='<div class="thumb">'+((it.l||it.i)?'<img loading="lazy" referrerpolicy="no-referrer"'+(it.p?' style="object-position:'+it.p+'"':'')+' alt="'+esc(it.t)+'" src="'+(it.l||TH+it.i)+'" data-big="'+BASE+it.i+'" onerror="if(!this.dataset.r){this.dataset.r=1;this.src=this.dataset.big}else{this.style.display=\'none\'}">':'')+(it.pr?'<span class="price" role="link" tabindex="0" title="Voir mes coordonnées">'+it.pr+' €</span>':'')+'</div>'+
+var a=document.createElement("a");a.className="card";a.setAttribute("role","button");a.tabIndex=0;a.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();openLb(it,0)}});a.setAttribute("data-cat",it.c);if(it.pr)a.setAttribute("data-sale","1");
+a.innerHTML='<div class="thumb">'+((it.l||it.i)?'<img loading="lazy" referrerpolicy="no-referrer"'+(it.p?' style="object-position:'+it.p+'"':'')+' alt="'+esc(it.t)+'" src="'+(it.l||TH+it.i)+'" data-big="'+BASE+it.i+'" onerror="if(!this.dataset.r){this.dataset.r=1;this.src=this.dataset.big}else{this.style.display=\'none\'}">':'')+(it.wm?'<span class="wm" aria-hidden="true">'+esc(it.wm)+'</span>':'')+(it.pr?'<span class="price" role="link" tabindex="0" title="Voir mes coordonnées">'+it.pr+' €</span>':'')+'</div>'+
 '<div class="b"><h3>'+esc(it.t)+'</h3><p class="meta">'+[it.y,it.f?esc(it.f):''].filter(Boolean).join(' · ')+'</p><p class="desc">'+esc(it.d)+'</p><div class="chips">'+it.w.map(function(w){return'<span>'+esc(w)+'</span>'}).join("")+'</div>'+(it.pr?'<span class="buy" role="link" tabindex="0" data-m="mailto:laurent.leroy38@gmail.com?subject='+encodeURIComponent('Achat : '+it.t)+'&body='+encodeURIComponent('Bonjour Laurent,\n\nje suis intéressé(e) par « '+it.t+' » ('+it.pr+' €). Est-il disponible ?\n\nMerci.')+'">Me contacter pour l’acheter</span>':'')+'</div>';
 if(!it.g)it.g=[it.l||BASE+it.i];a.addEventListener("click",function(e){e.preventDefault();openLb(it,0)});
 g.appendChild(a)});
